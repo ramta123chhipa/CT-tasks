@@ -93,7 +93,7 @@ To understand and implement core database concepts using an e-commerce database 
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 SQL-Internship-Projects/
