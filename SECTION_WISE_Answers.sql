@@ -57,8 +57,6 @@ Since -50 is a negative value, the database rejects the insertion.
 */
 
 
-
-
 /*SECTION - B*/
 
 /*q7.)
@@ -119,7 +117,6 @@ WHERE order_date BETWEEN '2024-08-01' AND '2024-08-31';
 */
 
 
-
 /*
 q12.)
 No, the index on join_date would generally not be used efficiently.
@@ -147,13 +144,11 @@ FROM orders;
 */
 
 
-
 /*q14.)
 SELECT SUM(total_amount) AS total_revenue
 FROM orders
 WHERE status = 'Delivered';
 */
-
 
 
 /*q15.)
@@ -162,7 +157,6 @@ SELECT category,
 FROM products
 GROUP BY category;
 */
-
 
 
 /*q16.)
@@ -175,7 +169,6 @@ ORDER BY total_revenue DESC;
 */
 
 
-
 /*q17.)
 SELECT category,
     MAX(unit_price) AS most_expensive_product,
@@ -183,7 +176,6 @@ SELECT category,
 FROM products
 GROUP BY category;
 */
-
 
 
 /*q18.)
@@ -254,7 +246,6 @@ SELECT c.customer_id,
 FROM customers c
 LEFT JOIN orders o
 ON c.customer_id = o.customer_id;
-
 
 RIGHT JOIN:-
 SELECT c.customer_id, c.first_name, c.last_name,
@@ -360,6 +351,5 @@ WHERE product_id = 208;
 COMMIT;
 
 /*IF any statement fail:*/
-ROLLBACK;
-
+/*ROLLBACK;
 */
