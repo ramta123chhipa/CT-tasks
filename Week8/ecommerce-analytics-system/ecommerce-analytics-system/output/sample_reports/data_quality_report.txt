@@ -1,0 +1,19 @@
+Data Quality & Cleaning Report
+Generated: 2026-07-08 15:48:08
+======================================================================
+[customers] Removed 8 duplicate customer_id rows (kept first). 608 -> 600 rows.
+[customers] validate_emails(): 7 customer_ids have invalid emails (sample: [252, 296, 468, 473, 474]).
+[products] Normalized product_name (trim + title case) for 25 rows.
+[orders] 142 rows have missing/NULL customer_id (kept as NULL, treated as guest/unattributed orders).
+[orders] 22 rows have an order_date in the future (kept, flagged for review).
+[order_items] check_referential_integrity(): 94 order_items rows reference an order_id that does not exist in orders (sample order_ids: [3145, 3121, 3411, 3093, 3369]).
+[order_items] Dropped 94 rows with invalid order_id references.
+[order_items] 16 rows had discount_percent outside 0-100; clipped to range.
+[order_items] 201 rows identified as returns (negative quantity), flagged via is_return.
+[order_items] 37 rows have quantity = 0 (kept, but contribute 0 revenue).
+======================================================================
+Final row counts:
+  customers_clean.csv   : 600
+  products_clean.csv    : 150
+  orders_clean.csv      : 3000
+  order_items_clean.csv : 6406

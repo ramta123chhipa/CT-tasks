@@ -1,0 +1,14 @@
+$ python test_edge_cases.py
+Running edge-case tests for the E-Commerce Order Analytics System
+======================================================================
+[PASS] clean_order_items.csv has ZERO order_items referencing a non-existent order (check_referential_integrity() removed them during cleaning)
+[PASS] cleaned order_items has no discount_percent outside the 0-100 range (clean_data.py clips out-of-range values)
+[PASS] the SQLite schema's CHECK constraint rejects discount_percent = 150 at insert time
+[PASS] quantity = 0 rows are kept (37 found) and contribute exactly 0 revenue
+[PASS] future-dated orders are preserved for downstream testing (22 found, flagged in output/sample_reports/data_quality_report.txt)
+[PASS] CLI --report summary with a date range that has no data exits cleanly (code 0) and prints a friendly 'no data' message rather than crashing
+[PASS] a minimal 1-customer / 1-order / 1-item dataset loads and computes correct revenue (40.0)
+[PASS] CLI rejects an invalid --start date with a clear error and non-zero exit code
+[PASS] CLI rejects an unrecognized --report value via argparse's choices validation
+======================================================================
+Results: 9 passed, 0 failed
